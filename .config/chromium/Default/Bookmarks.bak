@@ -1,0 +1,47 @@
+{
+   "checksum": "4f754e7cb6327a7e9bc1bd79b88a8def",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13296903427844237",
+            "guid": "2d58e845-7849-4360-98e3-fb9153dc113f",
+            "id": "6",
+            "name": "VincentHongre/Yes-Tourniquet",
+            "type": "url",
+            "url": "https://github.com/VincentHongre/Yes-Tourniquet"
+         }, {
+            "date_added": "13297939965362465",
+            "guid": "9e885df8-ebab-449b-b98b-807baa803c6c",
+            "id": "8",
+            "name": "Téléchargez le fichier – votre conversion a réussi",
+            "type": "url",
+            "url": "https://www.online-convert.com/fr/result#j=fcec6d75-3517-4d50-a50e-8018e4781b87"
+         } ],
+         "date_added": "13296903111350819",
+         "date_modified": "13297939965362465",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Barre de favoris",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13296903111350849",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Autres favoris",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13296903111350869",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Favoris sur mobile",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

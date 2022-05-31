@@ -1,0 +1,5 @@
+[Default Applications]
+text/x-arduino=arduino-arduinoide.desktop
+
+[Added Associations]
+image/vnd.adobe.photoshop=gpicview.desktop;

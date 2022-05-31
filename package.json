@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "onoff": "^6.0.3",
+    "react-layered-image": "^2.0.6",
+    "socket.io": "^4.5.1"
+  }
+}

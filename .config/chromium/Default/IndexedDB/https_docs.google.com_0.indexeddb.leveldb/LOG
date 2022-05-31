@@ -1,0 +1,5 @@
+2022/05/23-11:10:05.911 df1 Recovering log #3
+2022/05/23-11:10:05.920 df1 Level-0 table #5: started
+2022/05/23-11:10:05.939 df1 Level-0 table #5: 8324 bytes OK
+2022/05/23-11:10:05.979 df1 Delete type=3 #2
+2022/05/23-11:10:05.979 df1 Delete type=0 #3

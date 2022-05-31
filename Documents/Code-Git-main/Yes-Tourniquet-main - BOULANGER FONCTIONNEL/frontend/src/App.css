@@ -1,0 +1,54 @@
+.Animation {
+  width: 15vw;
+}
+
+.status {
+  top: 10vh;
+  position: absolute;
+  left: 4rem;
+  font-size: large;
+}
+
+.App {
+  text-align: center;
+  background-image: url("./background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0rem;
+  right: 7.5vw;
+}
+
+.logo {
+  height: 15vmin;
+  margin: 0 0.25rem;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

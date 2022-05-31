@@ -1,47 +1,44 @@
+import React, { useEffect, useState } from 'react';
 import "./App.css";
+import Video1 from "./Vidéo1.gif"
 
-//import read from "./read.js";
-import {passages} from "./read";
+var passages = 5;
 
-//var passages = 0;
-var ancien_état = 0;
-var nouvel_état = 0;
 var équivalences = "une boulangerie";
 
-function Moove({lastMessage}) {
+
+function Moove({socket}) {
+  const [messages, setMessages] = useState({});
+
+  useEffect(() => {
+    const messageListener = (message) => {
+      console.log("message", message);
+      setMessages((prevMessages) => {
+        console.log("prev", prevMessages);
+        const newMessages = {...prevMessages};
+        newMessages[message.id] = message;
+        passages = Object.keys(message).map(function(key){ return message[key];}).reduce((a, b) => a + b);
+        return newMessages;
+      });
+    };
+  
+    socket.on('passages', messageListener);
+
+    return () => {
+      socket.off('passages', messageListener);
+    };
+  }, [socket]);
+
+
+
+
+
+  var lastMessage = {data: "xxx"}
+
   const messageValue = lastMessage?.data?.replace(/["\\r]/g, "");
   const totalWattOfDay = (parseFloat(passages) * 0.09).toFixed(1);
 
-  
-  
-  
-  if (messageValue == 1) {
-    nouvel_état = 1;
-  }
-  
-  if (messageValue == 0) {
-    nouvel_état = 0;
-  }
-  
-  if ((ancien_état == 0) && (nouvel_état == 1)) {
-    passages = passages + 1;
-    ancien_état = 1;
-    // traitement sur front montant
-    
-  } else if ((ancien_état == 1) && (nouvel_état == 0)) {
-    ancien_état = 0;
-    // traitement sur front descendant
-    
-  }
-  else if( (ancien_état == 0) && (nouvel_état == 0) )
-  {
-     // pas de changement d'état : front bas
-  }
-  else if( (ancien_état == 1) && (nouvel_état == 1) )
-  {
-     // pas de changement d'état : front haut
-  }
-  
+
     
   
   return (
@@ -62,42 +59,27 @@ function Moove({lastMessage}) {
           flexDirection: "column",
         }}
       >
-        {(passages >= 5 && passages <= 10) && (
-         <div>
-          <span>
-              Bravo ! Vous venez de générer assez d'énergie pour alimenter 
-              <span style={{ fontWeight: "bold", color: "yellow" }}>
-                {" "}
-                {équivalences}
-                <br />
-                  <br />
-              </span>
-            </span>
-          </div>
-          )}
+        
           
         
         
         
         {passages ? (
           <div>
+          <br />
+          
             <span>
-              Vous êtes la
-              <span style={{ fontWeight: "bold", color: "green" }}>
+              
+              
+              <span style={{ fontWeight: "bold", color: "orange" }}>
                 {" "}
-                {passages}ème{" "}
+                {passages} tours{" "}
               </span>
-              personne de la journée <br />
-              et vous vennez de générer{" "}
-              <span style={{ fontWeight: "bold", color: "green" }}>
-                0,09 Wh
-              </span>
-            </span>
-            <br />
-            <br />
-            Total aujourd'hui :{" "}
-            <span style={{ color: "green", fontWeight: "bold" }}>
-              {totalWattOfDay} Wh
+              
+              
+              
+            
+            
             </span>{" "}
             <br />
             <br />
@@ -107,7 +89,7 @@ function Moove({lastMessage}) {
                 fontWeight: "bold",
               }}
             >
-              Merci !
+              
             </span>
           </div>
         ) : (
